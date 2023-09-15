@@ -1,0 +1,262 @@
+/* Main containers styling */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body{
+    font-family: sans-serif;
+    text-align: center;
+    color: white;
+    background-color: rgb(16,20,21);
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+}
+
+.main{
+    display: flex;
+    flex: 1;
+    align-content: center;
+    justify-items: center;
+    margin: 100px 0 0 0;
+}
+
+.center{
+    background: rgb(16,20,21);
+    padding: 3em 0 3em 0;
+    flex: 5 5 150px;
+    width: 100px;
+    margin: 0 30px 0 30px;
+}
+
+/* Top panel with sort options styling */
+.top_panel{
+    max-width: 2000px;
+    height: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgb(16,20,21);
+}
+
+.top_panel h1{
+    text-align: left;
+}
+
+.top_panel .line{
+    background: rgb(80,80,80);
+    width: 100%;
+    height: 5px;
+}
+/* Sort options styling */
+.top_panel .sort_categories{
+    position: absolute;
+    right: 0;
+    top: 8px;
+    width: 850px;
+    display: flex;
+}
+
+.top_panel .sort_categories .variant{
+    margin: auto;
+}
+
+.top_panel .sort_categories .variant h3{
+    cursor: pointer;
+}
+
+.top_panel .sort_categories .variant h3:hover{
+    color: aqua;
+}
+
+.top_panel .sort_categories .variant.active .underline{
+    background: blue;
+    width: 100%;
+    height: 5px;
+    bottom: -15px;
+}
+
+/* Dropdown list styling */
+.top_panel .dropdown_sort_categories{
+    min-width: 15em;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    display: none;
+}
+
+.dropdown_sort_categories *{
+    box-sizing: border-box;
+}
+
+.select{
+    height: 20px;
+    background: grey;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px rgb(60,60,60) solid;
+    border-radius: 0.5em;
+    padding: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.select-clicked{
+    border: 2px #FFFF00 solid;
+    box-shadow: 0 0 0.8em green;
+}
+
+.select:hover{
+    background: #23242a;
+}
+
+.arrow{
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid white;
+    transition: 0.3s;
+}
+
+.arrow-rotate{
+    transform: rotate(180deg);
+}
+
+.droplist{
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: grey;
+    border: 1px black solid;
+    box-shadow: 0 0.5em 1em rgba(0,0,0,0.2);
+    border-radius: 0.5em;
+    color: white;
+    position: absolute;
+    top 3em;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+.droplist li{
+    padding: 0.7em 0.5em;
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.droplist li:hover{
+    background: #23242a;
+}
+
+.droplist .active{
+    background: #23242a;
+}
+
+.droplist-open{
+    display: block;
+    opacity: 1;
+}
+
+/* Reviews grid styling */
+.reviews_grid{
+    max-width: 2000px;
+    margin: 30px auto;
+    background: rgb(16,20,21);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 100px;
+    font-family: sans-serif;
+}
+/* Review card styling */
+.review_card_image{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;    
+    display: block;
+}
+
+.review_card_title{
+    line-height: 1.5;
+    font-size: 45px;
+    padding: 15px;
+    background: rgb(26,30,31);
+    color: white;
+    transition: .4s ease;
+}
+
+.review_card_link{
+    text-decoration: none;
+}
+/* Review card overlay styling */
+.review_card .rating{
+    position: absolute;
+    width: 70px;
+    height: 100px;
+    right: 20px;
+    top: 0;
+    background: black;
+    padding: 8px;
+}
+
+.review_card .rating .splitter{
+    background: white;
+    height: 4px;
+    width: 50%;
+    margin: auto;
+}
+
+.review_card .rating .score{
+    font-size: 40px;
+}
+
+.review_card .rating .outof{
+     font-size: 28px;
+}
+
+.review_card_title:hover{
+    color: #FFFF00;
+}
+
+/* Load more button styling */
+.button{
+    width: 600px;
+    height: 70px;
+    border-color: white;
+    border-width: 2px;
+    border-style: groove;
+    font-size: 35px;
+    margin: auto;
+    transition: .5s ease;
+}
+.button.active{
+    cursor: pointer;
+}
+
+.button h3{
+    margin: 10px;
+}
+
+.button.active:hover{
+    background: grey;
+}
+
+/* When screen is narrow, change sort variants to a drop list*/
+@media all and (max-width: 1400px){
+    .top_panel .dropdown_sort_categories{
+        display: block;
+    }
+    .top_panel .sort_categories{
+        display: none;
+    }
+}

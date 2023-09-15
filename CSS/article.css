@@ -1,0 +1,246 @@
+/* Main containers styling */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+    text-align: center;
+    color: white;
+    background-color: rgb(16,20,21);
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.article-container{
+    margin: 0 50px 0 50px;
+}
+
+.main{
+    display: flex;
+    flex: 1;
+    align-content: center;
+    justify-items: center;
+    margin: 100px 0 0 0;
+}
+
+.center{
+    background: rgb(16,20,21);
+    padding: 3em 0 3em 0;
+    flex: 5 5 150px;
+    width: 100px;
+}
+
+/* Top main image styling */
+.top_poster_image{
+    height: 550px;
+    max-width: 2000px;
+    min-width: 400px;
+    margin: 20px auto;
+    position: relative;
+    color: white;
+}
+
+.top_poster_image .image{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.top_poster_image .title_container{
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+    justify-content: center;
+    align-content: center;
+}
+
+.top_poster_image .title_container .title{
+    font-size: 40px;
+    margin: 0 50px 0 50px;
+    font-family: 'REM', sans-serif;
+}
+
+.top_poster_image .overlay{
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(0deg, rgba(0,0,0,1), transparent);
+}
+
+.top_poster_image .author{
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+}
+.top_poster_image .date{
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+}
+
+/* Article styling */
+.content{
+    font-size: 28px;
+    text-align: left;
+    max-width: 1500px;
+    min-width: 400px;
+    margin: 0 auto;
+    position: relative;
+    color: rgb(200,200,200);
+}
+
+.content p{
+    width: 100%;
+    margin: 30px auto;
+}
+
+/* Article images styling */
+.content .gallery_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content .gallery_container .image_container{
+    height: 250px;
+    width: 500px;
+    cursor: pointer;
+}
+
+.content .gallery_container .image_container .image{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;    
+}
+
+.image_container .overlay{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+
+.image_container .overlay .fa{
+    margin: auto;
+}
+/* Popup container which appears when image from the article is clicked styling */
+.content .popup-image{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+}
+
+.content .popup-image .cross{
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    font-size: 80px;
+    font-weight: bolder;
+    color: grey;
+    cursor: pointer;
+    z-index: inherit;
+}
+
+.content .popup-image .prev{
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    font-size: 60px;
+    font-weight: bolder;
+    color: grey;
+    cursor: pointer;
+    z-index: inherit;
+}
+
+.content .popup-image .next{
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    font-size: 60px;
+    font-weight: bolder;
+    color: grey;
+    cursor: pointer;
+    z-index: inherit;
+}
+
+.content .popup-image img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+}
+
+.image_container:hover .overlay{
+    display: flex;
+}
+
+.content .popup-image .cross:hover,
+.content .popup-image .prev:hover,
+.content .popup-image .next:hover{
+    color: white;
+}
+
+/* Website size responsiveness styling */
+
+/* When screen is narrow, decrease size of font and images, change its overlay */
+@media screen and (max-width:1000px){
+    .top_poster_image{
+        height: 300px;
+    }
+    .top_poster_image .title_container .title{
+        font-size: 30px;
+    }
+    
+    .top_poster_image .overlay{
+        height: 100%;
+    }
+    .content{
+     font-size: 20px;   
+    } 
+    
+    .article-container{
+        margin: 0 20px 0 20px;
+    }
+}
+/* When screen is narrow, decrease top main image and its text */
+@media screen and (max-width:700px){
+    .top_poster_image .title_container .title{
+        font-size: 25px;
+    }
+    .top_poster_image .author{
+        position: absolute;
+        font-size: 17px;
+        bottom: 10px;
+        left: 30px;
+    }
+    .top_poster_image .date{
+        position: absolute;
+        font-size: 17px;
+        bottom: 10px;
+        right: 30px;
+    }  
+}
+/* When screen is not very wide, increase popup image size on the screen */
+@media (max-width:2000px){
+    .content .popup-image img{
+        width: 95%;
+    }
+}

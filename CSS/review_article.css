@@ -1,0 +1,43 @@
+/* Score one raw table styling */
+.scores{
+    display: flex;
+    height: 200px;
+    width:100%;
+    margin-bottom: 50px;
+    justify-content: center;
+    list-style: none;
+    align-items: flex-end;    
+}
+
+.scores li{
+    background: green;
+    color: rgb(200,200,200);
+    font-size: 35px;
+    font-weight: 700;
+    width: 150px;
+    height: 70px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.scores li .text{
+    font-size: 25px;
+}
+
+.scores li:nth-child(1){
+    background: rgb(50,50,50);
+}
+.scores li:nth-child(2){
+    background: rgb(40,40,180);
+}
+.scores li:nth-child(3){
+    background: rgb(40,120,40);
+}
+.scores li:nth-child(4){
+    background: rgb(170,130,40);
+}
+.scores li:nth-child(5){
+    background: rgb(170,40,120);
+}

@@ -1,0 +1,390 @@
+/* Main containers styling */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body{
+    font-family: sans-serif;
+    text-align: center;
+    color: white;
+    background-color: rgb(16,20,21);
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main{
+    display: flex;
+    flex: 1;
+    align-content: center;
+    justify-items: center;
+    margin: 100px 0 0 0;
+}
+
+.center{
+    background: rgb(16,20,21);
+    padding: 3em 0 3em 0;
+    flex: 5 5 150px;
+    width: 100px;
+}
+
+/* Top news grid styling */
+.top_news_cards h2{
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+    font-size: 0.9vw;
+    margin: 50% 0 0 0;
+    width: 100%;
+    letter-spacing: 5px;
+    line-height: 1.5em;
+}
+
+.top_news_cards{
+    margin: 0 auto;
+    position: relative;
+    max-width: 2000px;
+    justify-content:center;
+    align-items: center;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Top news crad styling */
+.content_image_card{
+    width: 100%;
+    position: relative;
+    color: white;
+}
+
+.content_image_card .image{
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.title{
+    position: absolute;
+    top: 10px;
+    margin: 10px;
+    font-size: 40px;
+    text-shadow: 0 0px 5px #000000;
+    font-style: italic;
+    text-decoration: underline #FFFF00;
+}
+/* Overlay of top news card styling */
+.overlay{
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    transition: .5s ease;
+}
+
+.overlay h2{
+    position: absolute;
+    bottom: 5%;
+    color: white;
+    text-shadow: 0 5px 8px #000000;
+    margin: 50% 0 0 0;
+    width: 100%;
+    letter-spacing: 2px;
+    line-height: 1.5em;
+    font-size: 25px;
+    transition: .5s ease;
+}
+
+.before{
+    top: 50%;
+    right: 0;
+    width: 100%;
+    height: 59%;
+    background: linear-gradient(0deg, rgba(255,255,0,0.5), transparent);
+    opacity: 1;
+    transition: .5s ease;
+}
+
+.after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,0.8), transparent);
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.content_image_card:hover .after{
+    opacity: 1;
+}
+
+.content_image_card:hover .before{
+    opacity: 0;
+}
+
+.content_image_card:hover .overlay h2{
+    bottom: 10%;
+}
+
+/* Main news card styling */
+.main_news_card{
+    position: relative;
+    margin: 10px auto;
+    max-width: 2000px;
+    height: 400px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    object-fit: cover;
+}
+
+.main_news_card a{
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.content_image_stripe{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.content_image_stripe .image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content_image_stripe .overlay2{
+    position: absolute;
+    bottom: 60px;
+    left: 50px;
+    width: 950px;
+    height: 80px;
+    background: rgb(130,0,0);
+    transform: skewX(-25deg);
+    transition: .5s ease;
+}
+
+.content_image_stripe .text{
+    position: absolute;
+    bottom: 70px;
+    left: 80px;
+    width: 950px;
+    height: 50px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    text-align: left;
+    transition: .5s ease;
+}
+
+.content_image_stripe .overlay{
+    display: none;
+}
+
+/* Overlay interaction with mouse */
+.content_image_stripe:hover .after{
+    opacity: 1;
+}
+
+.content_image_stripe:hover .before{
+    opacity: 0;
+}
+
+.content_image_stripe:hover .overlay h2{
+    bottom: 10%;
+}
+
+.content_image_stripe:hover .overlay2{
+    left: 90px;
+}
+.content_image_stripe:hover .text{
+    left: 120px;
+}
+
+/* Splitter panel with display mode icons styling */
+.top_panel{
+    max-width: 2000px;
+    height: auto;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgb(16,20,21);
+    display: flex;
+}
+
+.top_panel h1{
+    text-align: left;
+}
+
+.icon{
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+}
+
+.display_mode_icons{
+    position: absolute;
+    right: 0;    
+}
+
+.news .line{
+    height: 5px;
+    max-width: 2000px;
+    background: grey;
+    margin: auto;
+}
+
+/* Bottom news cards styling */
+.news_grid{
+    max-width: 2000px;
+    margin: 0 auto;
+    background: rgb(16,20,21);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(400px, 1fr));
+    grid-gap: 30px;
+    font-family: sans-serif;
+    color: white;
+    margin-top: 60px;
+}
+
+.news_card{
+    color: white;
+}
+
+.news_card .news_card_article{
+    display: none;
+}
+
+.news_card_image{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;    
+    display: block;
+}
+
+.news_card_title{
+    line-height: 1.5;
+    font-size: 1em;
+    padding: 15px;
+    background: rgb(26,30,31);
+    transition: .4s ease;
+}
+
+.news_card_link{
+    text-decoration: none;
+}
+
+/* Styling bottom news grid when display mode is list */
+.news_grid.list{
+    max-width: 2000px;
+    margin: 0 auto;
+    color: white;
+    background: rgb(16,20,21);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    font-family: sans-serif;
+    margin-top: 60px;
+}
+
+.news_grid.list .news_card{
+    position: relative;
+    display: flex;
+}
+
+.news_grid.list .news_card_article{
+    display: block;
+    color: gray;
+    margin: 40px 10px 10px 10px;
+    text-align: left;
+}
+
+.news_grid.list .news_card_image{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;    
+    display: block;
+}
+
+.news_grid.list .news_card_title{
+    line-height: 1.5;
+    font-size: 1em;
+    padding: 15px;
+    text-align: left;
+    transition: .4s ease;
+}
+
+.news_card_link{
+    text-decoration: none;
+}
+
+.news_card:hover .news_card_title{
+    color: #FFFF00;
+}
+
+.news_grid.list .news_card_title:hover{
+    color: #FFFF00;
+}
+
+/* Website size responsiveness styling */
+
+/* When screen is narrow, decrease size of font and images */
+@media screen and (max-width:1538px){
+    .title{
+        font-size: 30px;
+    }    
+    .overlay h2{
+        font-size: 20px;
+    }
+    
+    .content_image_card .image{
+        width: 100%;
+        height: 300px;
+    }
+    
+    .main_news_card{
+        max-width: 2000px;
+        height: 300px;
+    }   
+}
+
+/* When screen is narrow, decrease size of font even more, 
+change news grid template, and change overlay for main news card */
+@media screen and (max-width:1300px){
+    .top_news_cards{
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 0px;
+    }
+    .overlay2{
+        display: none;
+    }
+    .overlay h2{
+        font-size: 20px;
+    }
+    .content_image_stripe .text{
+        display: none;
+    }
+    
+    .content_image_stripe .overlay{
+        display:block;
+    }
+    
+    .content_image_stripe .overlay h2{
+        display:block;
+        left: 0;
+    }
+    
+    .news_grid{
+        grid-template-columns: 1fr;
+    }    
+}

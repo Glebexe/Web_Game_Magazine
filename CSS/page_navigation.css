@@ -1,0 +1,55 @@
+/* Bottom navigation bar styling */
+.navigation{
+    margin: 30px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.navigation ul{
+    position: relative;
+    background: white;
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.navigation ul li{
+    list-style: none;
+    line-height: 50px;
+    margin: 0 5px;
+}
+
+.navigation ul li.pageNum{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.navigation ul li a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    border-radius: 50%;
+}
+
+.navigation ul li.pageNum:hover a,
+.navigation ul li.pageNum.active a{
+    background: grey;
+    color: white;
+}
+
+.navigation ul li:first-child{
+    margin-right: 30px;
+    font-weight: 700;
+    font-size: 30px;
+}
+.navigation ul li:last-child{
+    margin-left: 30px;
+    font-weight: 700;
+    font-size: 30px;
+}

@@ -1,0 +1,186 @@
+/* Load font */
+@font-face 
+{ 
+    font-family: 'Amaranth-Regular';  
+    src: url('/Fonts/Amaranth Regular.ttf')format("truetype"); 
+}
+
+/* Top menu bar styling */
+header{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0 1em 0;
+    background-color: rgb(22,27,28);
+    
+}
+/* Logo styling */
+.logo {
+    margin: 10px;
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+    cursor: pointer;
+}
+/* Navigation links of the header styling */
+.navigation_links a{
+    font-family: Amaranth-Regular, sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #FFFF00;
+    text-decoration: none;
+}
+
+.navigation_links li{
+    display: inline-block;
+    padding: 0px 40px;
+}
+
+.navigation_links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.navigation_links li a:hover{
+    color: gray;
+}
+
+/* Footer styling */
+footer{
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: rgb(26,30,31);
+    padding: 1em 3em 1em 3em;
+    margin-top: auto;
+}
+
+footer .container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 20px;
+    text-align: left;
+}
+
+footer .container .section h2{
+    color: white;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+footer .container .section h2::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 90px;
+    height: 3px;
+    background: #FFFF00;
+}
+
+/* About project footer section styling */
+footer .container .section.about p{
+    margin: 0 200px 0 0;
+}
+
+.icons{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,40px);
+    grid-gap: 40px;
+}
+.icons li{
+    list-style: none;
+}
+.icons li a{
+    display: inline-block;
+    width:58px;
+    height: 58px;
+    background: rgb(26,30,21);
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.icons li a:hover{
+    background: rgb(46,50,41);
+}
+
+.icons li a .fa{
+    color: white; 
+    font-size: 30px;
+}
+
+/* Quick links footer section styling */
+.quicklinks li{
+    list-style: none;
+}
+
+.quicklinks li a{
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+    line-height: 1.8;
+}
+
+.quicklinks li a:hover{
+    color: #FFFF00;
+}
+
+/* Contacts footer section styling */
+.contacts li{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    margin-bottom: 15px;
+    grid-gap: 20px;
+}
+
+.contacts li span:nth-child(1){
+    color: white;
+    font-size: 30px;
+}
+
+.contacts a{
+    color: white;
+    text-decoration: none;
+}
+
+.contacts a:hover{
+    color: #FFFF00;
+}
+
+/* Bottom copyright bar styling */
+.copyright{ 
+    width: 100%;
+    background: rgb(10,10,10);
+    padding: 8px 100px;
+    text-align: center;
+    bottom: 0;
+}
+
+/* Footer size responsiveness styling */
+
+/* When screen is narrow, change footer grid to one column */
+@media (max-width: 1200px){
+    footer .container{
+        grid-template-columns: 1fr;
+    }
+}
+/* When screen is narrow, decrease font size */
+@media screen and (max-width:1000px){
+    footer{
+        font-size: 20px;
+    }
+}
+/* When screen is narrow, decrease about project footer section left margin */
+@media (max-width: 600px){
+    footer .container .section.about p{      
+        margin: 0 20px 0 0;
+    }
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="My gaming webmagazine">
+        <title>Gaming today</title>
+        
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="/CSS/reviews_pages.css">
+        <link rel="stylesheet" href="/CSS/common.css">
+        <link rel="stylesheet" href="/CSS/page_navigation.css">
+        
+        <!-- External libraries -->
+        <script src="https://kit.fontawesome.com/0f572e56b8.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.js"></script>
+    </head>
+
+	<body>        
+        <div class="main">
+            <div class="center">                
+                <div class="news">
+                    <!-- Panel above the reviews cards which contains sort mode options for review grid -->
+                    <div class="top_panel">
+                        <h1>Reviews</h1>
+                        <div class="line"></div>
+                        <div class="sort_categories">
+                            <div class="variant newest active">
+                                <h3>Newest reviews</h3>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="variant oldest">
+                                <h3>Oldest reviews</h3>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="variant best_games">
+                                <h3>Best games</h3>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="variant worst_games">
+                                <h3>Worst games</h3>
+                                <div class="underline"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- When screen is too narrow, sort options change to dropdown list -->
+                        <div class="dropdown_sort_categories">
+                            <div class="select">
+                                <span class="selected">Newest reviews</span>
+                                <div class="arrow"></div>
+                            </div>
+                            <ul class="droplist">
+                                <li class="variant newest active" type="list">Newest reviews</li>
+                                <li class="variant oldest" type="list">Oldest reviews</li>
+                                <li class="variant best_games" type="list">Best games</li>
+                                <li class="variant worst_games" type="list">Worst games</li>                  
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Review cards -->
+                    <div class="reviews_grid"></div>                    
+                </div>
+                
+                <!-- Load more button which allows to add additional review cards to the page -->
+                <div class="button active"><h3>Load More</h3></div>
+                
+                <!-- Bottom number of page navigation bar -->
+                <div class="navigation">
+                    <ul class="navigation_list">
+                        <li><a href="#" class="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>
+                        <li class="pageNum active"><a href="#">1</a></li>
+                        <li class="pageNum"><a href="#">2</a></li>
+                        <li class="pageNum"><a href="#">3</a></li>
+                        <li><a href="#" class="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Header with logo and links to news and reviews pages -->
+        <header>
+            <a href="/index.html" class="news_link">
+                <img class="logo" src="/Images/logo-no-background.svg" alt="logo">
+            </a>
+            <nav>
+                <ul class="navigation_links">
+                    <li class="news_link"><a href="/index.html">News</a></li>
+                    <li class="review_link"><a href="/HTML/review_page_template.html">Reviews</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Footer with three sections -->
+        <footer>
+            <div class="container">
+                <!-- Section about - some information about this project and icon links to the social medias -->
+                <div class="section about">
+                    <h2>About project</h2>
+                    <p>All article text is generated by Chat GPT. All images are taken from the internet. Contact data, authors, dates and other information on the website is made up. All coincidences are accidental and unintentional.</p>
+                    <ul class="icons">
+                        <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <!-- Section quicklinks - copy of category links from the top panel -->
+                <div class="section quicklinks">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li class="news_link"><a href="/index.html">News</a></li>
+                        <li class="review_link"><a href="/HTML/review_page_template.html">Reviews</a></li>
+                    </ul>
+                </div>
+                <!-- Section contacts - address, phones, and email -->
+                <div class="section contacts">
+                    <h2>Contacts</h2>
+                    <ul class="contacts">
+                        <li>
+                            <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                            <span>123 Baker Street,<br> London, W1A 2NE <br>UK</span>
+                        </li>
+                        <li>
+                            <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                            <p><a href="tel:+12345678999">+1 234 567 8999</a><br>
+                                <a href="tel:+98765432100">+9 876 543 2100</a>
+                            </p>
+                        </li>
+                        <li>
+                            <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <p><a href="mailto:letters@gmail.com">letters@gmail.com</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <div class="copyright">
+            <p>Copyright © 2023 GlebDev. All Rights Reserved.</p>
+        </div>
+        
+        <!-- Handlebars template for the review cards grid-->
+        <script id="reviewsGridTemplate" type="text/x-handlebars-template">
+            {{#each this}}
+                <div class="review_card" article_id="{{id}}">
+                    <a href="/HTML/review_article_template.html" class="review_card_link">
+                        <img src="{{main_image}}" alt="image" class="review_card_image">
+                        <div class="review_card_title">
+                                {{title}}
+                        </div>
+                    </a>
+                    <div class="rating">
+                        <div class="score">{{score}}</div>
+                        <div class="splitter"></div>
+                        <div class="outof">10</div>
+                    </div>   
+                </div>
+            {{/each}}
+        </script>  
+        
+        <!-- Scripts -->
+        <script src="/JS/review_pages_scripts/sort.js"></script>
+        <script src="/JS/review_pages_scripts/reviews_pages.js"></script>
+        <script src="/JS/general/page_navigation.js"></script> 
+        <script src="/JS/review_pages_scripts/reviews_pages_navigation.js"></script>
+        <script src="/JS/review_pages_scripts/load_more.js"></script>
+        <script src="/JS/general/common.js"></script>
+	</body>
+</html>
